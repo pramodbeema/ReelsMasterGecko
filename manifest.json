@@ -1,0 +1,79 @@
+{
+    "manifest_version": 3,
+    "name": "Reels Master",
+    "short_name": "Reels Master",
+    "version": "2.1.0",
+    "description": "Hands-free auto-scroll, timeline scrubber & playback controls for YouTube Shorts, Instagram Reels, and Facebook Reels.",
+    "author": "Pramod Beema",
+    "developer": {
+        "name": "Pramod Beema",
+        "url": "https://github.com/pramodbeema/ReelsMasterGecko"
+    },
+    "homepage_url": "https://github.com/pramodbeema/ReelsMasterGecko",
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "reelsmaster@pramodbeema",
+            "strict_min_version": "109.0"
+        }
+    },
+    "permissions": [
+        "activeTab",
+        "storage"
+    ],
+    "host_permissions": [
+        "https://www.youtube.com/*",
+        "*://*.instagram.com/*",
+        "*://*.facebook.com/*"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "*://*.youtube.com/*",
+                "*://*.instagram.com/*",
+                "*://*.facebook.com/*"
+            ],
+            "js": [
+                "content.js"
+            ],
+            "css": [
+                "styles.css"
+            ],
+            "run_at": "document_end"
+        }
+    ],
+    "commands": {
+        "convert-video": {
+            "suggested_key": {
+                "default": "Ctrl+Shift+F",
+                "mac": "Command+Shift+F"
+            },
+            "description": "Convert Short or Reel to standard video / post"
+        }
+    },
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "icon16.png",
+            "19": "icon19.png",
+            "32": "icon32.png",
+            "38": "icon38.png",
+            "48": "icon48.png",
+            "128": "icon128.png"
+        },
+        "default_title": "Reels Master"
+    },
+    "background": {
+        "scripts": [
+            "background.js"
+        ]
+    },
+    "icons": {
+        "16": "icon16.png",
+        "19": "icon19.png",
+        "32": "icon32.png",
+        "38": "icon38.png",
+        "48": "icon48.png",
+        "64": "icon64.png",
+        "128": "icon128.png"
+    }
+}

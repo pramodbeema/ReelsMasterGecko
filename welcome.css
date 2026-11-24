@@ -1,0 +1,337 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    max-height: 100vh;
+    overflow: hidden;
+    background-color: #08090D;
+    color: #F8FAFC;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Subtle background aura */
+body::before {
+    content: '';
+    position: fixed;
+    top: -20%;
+    left: -10%;
+    width: 60vw;
+    height: 60vh;
+    background: radial-gradient(circle, rgba(24, 119, 242, 0.08) 0%, rgba(225, 48, 108, 0.05) 45%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    bottom: -20%;
+    right: -10%;
+    width: 60vw;
+    height: 60vh;
+    background: radial-gradient(circle, rgba(255, 0, 51, 0.07) 0%, rgba(131, 58, 180, 0.05) 45%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.welcome-shell {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 1360px;
+    height: 100vh;
+    max-height: 100vh;
+    margin: 0 auto;
+    padding: clamp(16px, 2.5vh, 28px) clamp(18px, 3vw, 36px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* ==========================================================================
+   APP HEADER
+   ========================================================================== */
+.app-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding-bottom: clamp(12px, 1.8vh, 18px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    flex-shrink: 0;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.brand-icon {
+    width: 44px;
+    height: 44px;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.45));
+}
+
+.brand-title-row {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.brand-title-row h1 {
+    margin: 0;
+    font-size: clamp(20px, 2.2vw, 24px);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    background: linear-gradient(120deg, #FFFFFF 20%, #E2E8F0 50%, #CBD5E1 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.version-tag {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.08);
+    color: #94A3B8;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    letter-spacing: 0.02em;
+}
+
+.brand-tagline {
+    margin: 3px 0 0;
+    font-size: clamp(11.5px, 1.1vw, 13px);
+    color: #94A3B8;
+    font-weight: 500;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.platforms {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.platform-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 10px;
+    font-size: 11.5px;
+    font-weight: 600;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #CBD5E1;
+}
+
+.platform-chip .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+}
+
+.platform-chip.yt .dot { background: #FF0033; box-shadow: 0 0 6px rgba(255, 0, 51, 0.8); }
+.platform-chip.ig .dot { background: #E1306C; box-shadow: 0 0 6px rgba(225, 48, 108, 0.8); }
+.platform-chip.fb .dot { background: #1877F2; box-shadow: 0 0 6px rgba(24, 119, 242, 0.8); }
+
+.btn-github {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 6px 13px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    color: #F1F5F9;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.18s ease;
+}
+
+.btn-github:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.3);
+    color: #FFFFFF;
+    transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   FEATURE MATRIX (4x2 Minimalist Grid)
+   ========================================================================== */
+.feature-matrix {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: clamp(10px, 1.4vh, 16px);
+    margin: clamp(12px, 1.8vh, 20px) 0;
+    min-height: 0;
+}
+
+.feature-tile {
+    background: rgba(18, 21, 30, 0.72);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 13px;
+    padding: clamp(12px, 1.6vh, 18px);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+    overflow: hidden;
+}
+
+.feature-tile:hover {
+    transform: translateY(-2px);
+    border-color: rgba(255, 255, 255, 0.22);
+    background: rgba(24, 28, 40, 0.82);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
+}
+
+.feature-tile.highlight-tile {
+    background: linear-gradient(135deg, rgba(225, 48, 108, 0.08) 0%, rgba(24, 119, 242, 0.08) 100%), rgba(18, 21, 30, 0.72);
+    border-color: rgba(225, 48, 108, 0.28);
+}
+
+.feature-tile.highlight-tile:hover {
+    border-color: rgba(225, 48, 108, 0.5);
+    box-shadow: 0 10px 30px rgba(225, 48, 108, 0.15);
+}
+
+.tile-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: clamp(6px, 1vh, 10px);
+}
+
+.tile-icon {
+    font-size: clamp(18px, 2vh, 22px);
+    line-height: 1;
+}
+
+.tile-keys {
+    display: flex;
+    gap: 4px;
+}
+
+kbd {
+    display: inline-block;
+    padding: 2px 6px;
+    font-family: inherit;
+    font-size: 10.5px;
+    font-weight: 700;
+    color: #CBD5E1;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 5px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    white-space: nowrap;
+    letter-spacing: 0.01em;
+}
+
+.feature-tile h3 {
+    margin: 0 0 clamp(4px, 0.8vh, 7px);
+    font-size: clamp(13px, 1.25vw, 15px);
+    font-weight: 700;
+    color: #F1F5F9;
+    letter-spacing: -0.01em;
+}
+
+.feature-tile p {
+    margin: 0;
+    font-size: clamp(11.5px, 1.05vw, 12.5px);
+    line-height: 1.45;
+    color: #94A3B8;
+}
+
+.feature-tile p kbd {
+    font-size: 10px;
+    padding: 1px 4px;
+}
+
+/* ==========================================================================
+   APP FOOTER
+   ========================================================================== */
+.app-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: clamp(10px, 1.5vh, 14px);
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+    font-size: clamp(11px, 1.05vw, 12px);
+    color: #64748B;
+    flex-shrink: 0;
+}
+
+.footer-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #94A3B8;
+    font-weight: 500;
+}
+
+.status-indicator {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #10B981;
+    box-shadow: 0 0 8px rgba(16, 185, 129, 0.8);
+    display: inline-block;
+}
+
+.footer-hints {
+    color: #64748B;
+}
+
+/* ==========================================================================
+   RESPONSIVE COMPACT SCALING (Zero scrolling)
+   ========================================================================== */
+@media (max-width: 1024px) {
+    .feature-matrix {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+    }
+    .platform-chip {
+        padding: 4px 8px;
+        font-size: 11px;
+    }
+}
+
+@media (max-height: 680px) {
+    .welcome-shell {
+        padding: 12px 20px;
+    }
+    .brand-icon {
+        width: 36px;
+        height: 36px;
+    }
+    .brand-title-row h1 {
+        font-size: 18px;
+    }
+    .feature-tile {
+        padding: 10px 12px;
+    }
+    .feature-tile p {
+        font-size: 11px;
+    }
+}

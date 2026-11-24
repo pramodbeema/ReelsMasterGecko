@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reels Master</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+
+<body>
+    <div class="popup-container">
+        <header>
+            <img src="icon48.png" alt="Logo" class="logo">
+            <div>
+                <h1>Reels Master <span class="version">v2.1</span></h1>
+            </div>
+        </header>
+
+        <div class="platform-bar">
+            <span class="p-badge yt">YouTube Shorts</span>
+            <span class="p-badge ig">Instagram</span>
+            <span class="p-badge fb">Facebook</span>
+        </div>
+
+        <main>
+            <!-- Seek Duration Slider & Chips -->
+            <div class="settings-section">
+                <div class="settings-header">
+                    <label for="seek-duration" class="settings-label">Seek Duration: <span id="seek-duration-val" class="highlight-val">5s</span></label>
+                </div>
+                <div class="settings-control">
+                    <input type="range" id="seek-duration" min="1" max="30" step="1" value="5" class="seek-slider">
+                    <div class="seek-chips">
+                        <button type="button" class="seek-chip" data-val="2">2s</button>
+                        <button type="button" class="seek-chip active" data-val="5">5s</button>
+                        <button type="button" class="seek-chip" data-val="10">10s</button>
+                        <button type="button" class="seek-chip" data-val="15">15s</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Auto-Scroll Default Toggle -->
+            <div class="toggle-row">
+                <span class="toggle-label">🔁 Auto-Scroll Default</span>
+                <label class="switch">
+                    <input type="checkbox" id="auto-scroll-toggle">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+
+            <!-- Shortcuts Reference List -->
+            <div class="section-title">Essential Shortcuts & Controls</div>
+            <ul class="features-list">
+                <li>
+                    <span class="key">Space / K</span>
+                    <span class="desc">Play / Pause (prevents page scrolling)</span>
+                </li>
+                <li>
+                    <span class="key">🔁 Auto scroll</span>
+                    <span class="desc">Hands-Free Auto-Scroll (on-screen toggle)</span>
+                </li>
+                <li>
+                    <span class="key">Mouse</span>
+                    <span class="desc">Interactive Timeline Scrubber on hover</span>
+                </li>
+                <li>
+                    <span class="key">&lt; &gt;</span>
+                    <span class="desc">Playback Speed (0.25x – 2.0x)</span>
+                </li>
+                <li>
+                    <span class="key">← →</span>
+                    <span class="desc">Seek Video (custom duration from slider)</span>
+                </li>
+                <li>
+                    <span class="key">0</span>
+                    <span class="desc">Restart video from 0:00</span>
+                </li>
+                <li>
+                    <span class="key">M</span>
+                    <span class="desc">Mute / Unmute audio</span>
+                </li>
+                <li>
+                    <span class="key">Shift + ↑ ↓</span>
+                    <span class="desc">Adjust Volume</span>
+                </li>
+                <li>
+                    <span class="key">A / C</span>
+                    <span class="desc">Audio track / Captions toggle</span>
+                </li>
+                <li>
+                    <span class="key">Ctrl+Shift+F</span>
+                    <span class="desc">Convert Short / Reel to regular video</span>
+                </li>
+            </ul>
+        </main>
+
+        <footer>
+            <a href="https://github.com/pramodbeema/ReelsMasterGecko" target="_blank">Visit Project on GitHub</a>
+        </footer>
+    </div>
+    <script src="popup.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,8 @@
+# Archives and packages
+*.zip
+*.xpi
+*.crx
+
+# OS files
+Thumbs.db
+.DS_Store

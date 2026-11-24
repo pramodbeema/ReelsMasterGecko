@@ -1,0 +1,577 @@
+/* Fix YT Shorts - Content Styles */
+
+
+
+/* 1. Action Panel Injected Buttons (Convert + Auto-Scroll) */
+
+#shorts-converter-wrapper,
+
+#shorts-autoscroll-wrapper {
+
+  display: flex !important;
+
+  flex-direction: column !important;
+
+  align-items: center !important;
+
+  justify-content: center !important;
+
+  margin-top: 0 !important;
+
+  margin-bottom: 9px !important;
+
+  padding: 0 !important;
+
+  user-select: none !important;
+
+  z-index: 99 !important;
+
+  cursor: pointer !important;
+
+}
+
+
+
+#shorts-converter-wrapper button,
+
+#shorts-autoscroll-wrapper button,
+
+#shorts-converter-wrapper .shorts-fyt-button,
+
+#shorts-autoscroll-wrapper .shorts-fyt-button {
+
+  display: flex !important;
+
+  align-items: center !important;
+
+  justify-content: center !important;
+
+
+
+  /* Native YouTube Action Button Dimensions & Radius */
+
+  width: 48px !important;
+
+  height: 48px !important;
+
+  min-width: 48px !important;
+
+  min-height: 48px !important;
+
+  border-radius: 24px !important;
+
+
+
+  padding: 0 !important;
+
+  margin: 0 !important;
+
+  border: none !important;
+
+  cursor: pointer !important;
+
+  opacity: 1 !important;
+
+  outline: none !important;
+
+  position: relative !important;
+
+  /* Match YouTube native translucent action button background */
+
+  background: rgba(255, 255, 255, 0.15) !important;
+
+  backdrop-filter: blur(12px) !important;
+
+  -webkit-backdrop-filter: blur(12px) !important;
+
+  transition: background-color 0.2s cubic-bezier(0.05, 0, 0, 1) !important;
+
+}
+
+
+
+#shorts-converter-wrapper button:hover,
+
+#shorts-autoscroll-wrapper button:hover,
+
+#shorts-converter-wrapper .shorts-fyt-button:hover,
+
+#shorts-autoscroll-wrapper .shorts-fyt-button:hover {
+
+  background: rgba(255, 255, 255, 0.25) !important;
+
+}
+
+
+
+#shorts-converter-wrapper button:active,
+
+#shorts-autoscroll-wrapper button:active,
+
+#shorts-converter-wrapper .shorts-fyt-button:active,
+
+#shorts-autoscroll-wrapper .shorts-fyt-button:active {
+
+  background: rgba(255, 255, 255, 0.35) !important;
+
+}
+
+
+
+/* Style the SVG icons */
+
+#shorts-converter-wrapper svg,
+
+#shorts-autoscroll-wrapper svg {
+
+  display: block !important;
+
+  width: 24px !important;
+
+  height: 24px !important;
+
+  fill: rgb(241, 241, 241) !important;
+
+  pointer-events: none !important;
+
+}
+
+
+
+/* Style the labels ("Convert" / "Auto" text) - Exact YouTube typography */
+
+#shorts-converter-wrapper .label,
+
+#shorts-autoscroll-wrapper .label {
+
+  font-family: "YouTube Sans", "Roboto", Arial, sans-serif !important;
+
+  font-size: 12px !important;
+
+  font-weight: 500 !important;
+
+  line-height: 16px !important;
+
+  color: rgb(241, 241, 241) !important;
+
+  margin-top: 6px !important;
+
+  text-align: center !important;
+
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8) !important;
+
+  letter-spacing: 0.1px !important;
+
+  pointer-events: none !important;
+
+}
+
+
+
+/* Auto-Scroll ACTIVE state — glowing teal highlight */
+
+#shorts-autoscroll-wrapper.fyt-autoscroll-active button,
+
+#shorts-autoscroll-wrapper.fyt-autoscroll-active .shorts-fyt-button {
+
+  background: rgba(0, 200, 180, 0.25) !important;
+
+  box-shadow: 0 0 0 2px rgba(0, 200, 180, 0.6) !important;
+
+}
+
+
+
+#shorts-autoscroll-wrapper.fyt-autoscroll-active svg {
+
+  fill: rgb(0, 220, 195) !important;
+
+}
+
+
+
+#shorts-autoscroll-wrapper.fyt-autoscroll-active .label {
+
+  color: rgb(0, 220, 195) !important;
+
+  text-shadow: 0 0 8px rgba(0, 220, 195, 0.6) !important;
+
+}
+
+
+
+/* Light Theme Overrides */
+
+html[dark="false"] #shorts-converter-wrapper svg,
+
+html[dark="false"] #shorts-autoscroll-wrapper svg,
+
+[light-theme] #shorts-converter-wrapper svg,
+
+[light-theme] #shorts-autoscroll-wrapper svg {
+
+  fill: #0f0f0f !important;
+
+}
+
+
+
+html[dark="false"] #shorts-converter-wrapper .label,
+
+html[dark="false"] #shorts-autoscroll-wrapper .label,
+
+[light-theme] #shorts-converter-wrapper .label,
+
+[light-theme] #shorts-autoscroll-wrapper .label {
+
+  color: #0f0f0f !important;
+
+  text-shadow: none !important;
+
+}
+
+
+
+@media (prefers-color-scheme: light) {
+
+  html:not([dark="true"]) #shorts-converter-wrapper svg,
+
+  html:not([dark="true"]) #shorts-autoscroll-wrapper svg {
+
+    fill: #0f0f0f !important;
+
+  }
+
+  html:not([dark="true"]) #shorts-converter-wrapper .label,
+
+  html:not([dark="true"]) #shorts-autoscroll-wrapper .label {
+
+    color: #0f0f0f !important;
+
+    text-shadow: none !important;
+
+  }
+
+}
+
+
+
+/* 2. Menu Keyboard Selection Highlight (Zero Layout Shift) */
+
+.fyt-item-focused {
+
+  background-color: rgba(255, 255, 255, 0.12) !important;
+
+  border-radius: 12px !important;
+
+  box-shadow: inset 0 0 0 1.5px rgba(255, 255, 255, 0.4) !important;
+
+  transition: background-color 0.1s ease !important;
+
+}
+
+
+
+/* Ensure no pseudo-element causes vertical expansion */
+
+.fyt-item-focused::after {
+
+  content: none !important;
+
+}
+
+
+
+/* ==========================================================================
+   2. INSTAGRAM THEMED AUTO-SCROLL BUTTON (LEFT OF PLAYER)
+   ========================================================================== */
+#rm-ig-autoscroll-btn {
+  position: fixed !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 4px !important;
+  z-index: 2147483640 !important;
+  user-select: none !important;
+  cursor: pointer !important;
+  transition: opacity 0.2s ease !important;
+}
+
+#rm-ig-autoscroll-btn .rm-btn-circle {
+  width: 48px !important;
+  height: 48px !important;
+  border-radius: 50% !important;
+  background: rgba(38, 38, 38, 0.85) !important;
+  backdrop-filter: blur(14px) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #f5f5f5 !important;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.55) !important;
+  cursor: pointer !important;
+  transition: all 0.22s cubic-bezier(0.2, 0.9, 0.3, 1) !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  outline: none !important;
+}
+
+#rm-ig-autoscroll-btn .rm-btn-circle:hover {
+  transform: scale(1.08) !important;
+  background: rgba(54, 54, 54, 0.95) !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.7) !important;
+}
+
+#rm-ig-autoscroll-btn .rm-btn-circle:active {
+  transform: scale(0.95) !important;
+}
+
+#rm-ig-autoscroll-btn .rm-btn-circle svg {
+  width: 24px !important;
+  height: 24px !important;
+  fill: #ffffff !important;
+  pointer-events: none !important;
+  transition: transform 0.3s ease !important;
+}
+
+#rm-ig-autoscroll-btn.active-autoscroll .rm-btn-circle {
+  background: linear-gradient(135deg, #833AB4, #C13584, #E1306C, #FD1D1D) !important;
+  border-color: rgba(255, 255, 255, 0.45) !important;
+  box-shadow: 0 0 22px rgba(225, 48, 108, 0.75) !important;
+}
+
+#rm-ig-autoscroll-btn.active-autoscroll .rm-btn-circle svg {
+  transform: rotate(180deg) !important;
+}
+
+#rm-ig-autoscroll-btn .rm-btn-label {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  color: #f5f5f5 !important;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9) !important;
+  letter-spacing: 0.1px !important;
+  pointer-events: none !important;
+  white-space: nowrap !important;
+}
+
+#rm-ig-autoscroll-btn.active-autoscroll .rm-btn-label {
+  color: #E1306C !important;
+}
+
+/* ==========================================================================
+   3. FACEBOOK THEMED AUTO-SCROLL BUTTON (LEFT OF PLAYER)
+   ========================================================================== */
+#rm-fb-autoscroll-btn {
+  position: fixed !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 4px !important;
+  z-index: 2147483640 !important;
+  user-select: none !important;
+  cursor: pointer !important;
+  transition: opacity 0.2s ease !important;
+}
+
+#rm-fb-autoscroll-btn .rm-btn-circle {
+  width: 48px !important;
+  height: 48px !important;
+  border-radius: 50% !important;
+  background: rgba(58, 59, 60, 0.88) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #E4E6EB !important;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.55) !important;
+  cursor: pointer !important;
+  transition: all 0.22s cubic-bezier(0.2, 0.9, 0.3, 1) !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  outline: none !important;
+}
+
+#rm-fb-autoscroll-btn .rm-btn-circle:hover {
+  transform: scale(1.08) !important;
+  background: rgba(78, 79, 80, 0.95) !important;
+  border-color: rgba(255, 255, 255, 0.25) !important;
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.7) !important;
+}
+
+#rm-fb-autoscroll-btn .rm-btn-circle:active {
+  transform: scale(0.95) !important;
+}
+
+#rm-fb-autoscroll-btn .rm-btn-circle svg {
+  width: 24px !important;
+  height: 24px !important;
+  fill: #E4E6EB !important;
+  pointer-events: none !important;
+  transition: transform 0.3s ease !important;
+}
+
+#rm-fb-autoscroll-btn.active-autoscroll .rm-btn-circle {
+  background: linear-gradient(135deg, #1877F2, #0064e0) !important;
+  border-color: rgba(255, 255, 255, 0.4) !important;
+  box-shadow: 0 0 22px rgba(24, 119, 242, 0.8) !important;
+}
+
+#rm-fb-autoscroll-btn.active-autoscroll .rm-btn-circle svg {
+  transform: rotate(180deg) !important;
+  fill: #ffffff !important;
+}
+
+#rm-fb-autoscroll-btn .rm-btn-label {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  color: #E4E6EB !important;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9) !important;
+  letter-spacing: 0.1px !important;
+  pointer-events: none !important;
+  white-space: nowrap !important;
+}
+
+#rm-fb-autoscroll-btn.active-autoscroll .rm-btn-label {
+  color: #5599ff !important;
+}
+
+/* ==========================================================================
+   4. INSTAGRAM INTERACTIVE TIMELINE (NATIVE SINGLE BOTTOM LINE & DRAGGABLE THUMB)
+   ========================================================================== */
+#rm-insta-timeline {
+  position: fixed !important;
+  height: 18px !important;
+  display: flex !important;
+  align-items: flex-end !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  z-index: 2147483646 !important;
+  cursor: pointer !important;
+  user-select: none !important;
+  pointer-events: auto !important;
+}
+
+#rm-insta-timeline .rm-insta-track {
+  width: 100% !important;
+  height: 4px !important;
+  background: rgba(255, 255, 255, 0.35) !important;
+  position: relative !important;
+  transition: height 0.15s ease !important;
+  border-radius: 2px !important;
+}
+
+#rm-insta-timeline:hover .rm-insta-track,
+#rm-insta-timeline.rm-hovered .rm-insta-track,
+body.rm-scrubbing #rm-insta-timeline .rm-insta-track {
+  height: 7px !important;
+}
+
+#rm-insta-timeline .rm-insta-played {
+  position: absolute !important;
+  left: 0 !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  background: linear-gradient(90deg, #833AB4, #E1306C, #FD1D1D) !important;
+  pointer-events: none !important;
+  border-radius: 2px !important;
+}
+
+#rm-insta-timeline .rm-insta-thumb {
+  position: absolute !important;
+  top: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  width: 14px !important;
+  height: 14px !important;
+  background: #ffffff !important;
+  border-radius: 50% !important;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.85) !important;
+  cursor: grab !important;
+  pointer-events: auto !important;
+  transition: transform 0.1s ease !important;
+}
+
+body.rm-scrubbing #rm-insta-timeline .rm-insta-thumb,
+#rm-insta-timeline .rm-insta-thumb:active {
+  cursor: grabbing !important;
+  transform: translate(-50%, -50%) scale(1.25) !important;
+}
+
+.rm-insta-tooltip {
+  position: absolute !important;
+  bottom: 22px !important;
+  transform: translateX(-50%) !important;
+  background: rgba(0, 0, 0, 0.88) !important;
+  backdrop-filter: blur(8px) !important;
+  color: #ffffff !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  padding: 3px 8px !important;
+  border-radius: 5px !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  white-space: nowrap !important;
+  pointer-events: none !important;
+  opacity: 0 !important;
+  transition: opacity 0.15s ease !important;
+}
+
+#rm-insta-timeline:hover .rm-insta-tooltip,
+#rm-insta-timeline.rm-hovered .rm-insta-tooltip,
+body.rm-scrubbing #rm-insta-timeline .rm-insta-tooltip {
+  opacity: 1 !important;
+}
+
+/* ==========================================================================
+   5. SHARED HUD & ANIMATIONS
+   ========================================================================== */
+#reels-center-hud,
+#shorts-center-hud {
+  position: fixed !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  background: rgba(18, 18, 22, 0.85) !important;
+  backdrop-filter: blur(14px) saturate(160%) !important;
+  -webkit-backdrop-filter: blur(14px) saturate(160%) !important;
+  padding: 12px 26px !important;
+  border-radius: 30px !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  color: #ffffff !important;
+  font-size: 22px !important;
+  font-weight: 600 !important;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  letter-spacing: -0.2px !important;
+  z-index: 2147483647 !important;
+  pointer-events: none !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.65) !important;
+  animation: rmFadeOut 0.65s ease-out forwards !important;
+}
+
+@keyframes rmArrowRight {
+  0% { transform: translateX(0px); opacity: 1; }
+  100% { transform: translateX(14px); opacity: 0; }
+}
+
+@keyframes rmArrowLeft {
+  0% { transform: translateX(0px); opacity: 1; }
+  100% { transform: translateX(-14px); opacity: 0; }
+}
+
+@keyframes rmFadeOut {
+  0% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+  70% { opacity: 0.95; transform: translate(-50%, -50%) scale(1.02); }
+  100% { opacity: 0; transform: translate(-50%, -50%) scale(0.95); }
+}
