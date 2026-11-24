@@ -1,6 +1,6 @@
 # Reels Master for Firefox (Gecko) - v2.1.0
 
-[![Firefox Add-ons](https://img.shields.io/badge/Firefox-Add--ons-FF7139?logo=firefox-browser&logoColor=white)](https://addons.mozilla.org/en-US/firefox/extensions/)
+[![Firefox Add-ons](https://img.shields.io/badge/Firefox-Add--ons-FF7139?logo=firefox-browser&logoColor=white)](https://addons.mozilla.org/en-US/firefox/addon/reels-master-gecko/)
 [![GitHub Repo](https://img.shields.io/badge/GitHub-ReelsMasterGecko-blue?logo=github)](https://github.com/pramodbeema/ReelsMasterGecko)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Manifest V3](https://img.shields.io/badge/Manifest-V3-success.svg)](manifest.json)
@@ -18,7 +18,7 @@ Created by **[Pramod Beema](https://github.com/pramodbeema)**
 ## 📥 Installation in Mozilla Firefox
 
 ### Option 1: Official Firefox Add-ons (AMO)
-Install directly from [Mozilla Add-ons (AMO)](https://addons.mozilla.org/en-US/firefox/extensions/). *(Search for "Reels Master")*
+Install directly from [Mozilla Add-ons (AMO)](https://addons.mozilla.org/en-US/firefox/addon/reels-master-gecko/).
 
 ### Option 2: Temporary Add-on (For Developers & Testing)
 1. Clone or download this repository:
