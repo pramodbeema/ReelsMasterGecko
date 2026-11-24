@@ -26,6 +26,7 @@
 - Host permissions (`youtube.com`, `instagram.com`, `facebook.com`): Required to inject content scripts and CSS to provide playback controls, on-screen buttons, and the Instagram timeline scrubber on these specific video domains.
 
 ## Security & Privacy Compliance
+- `data_collection_permissions`: Configured to `{"required": ["none"]}` in `manifest.json`.
 - Zero external dependencies.
 - Zero remote code execution (no `eval`, no remote CDNs or scripts).
 - Zero user data collection, tracking, or telemetry.

@@ -87,8 +87,8 @@ Convert YouTube Shorts or Reels to regular video format with the on-screen Conve
 
 - **Manifest Version**: 3 (Gecko MV3)
 - **Gecko ID**: `reelsmaster@pramodbeema`
-- **Minimum Firefox Version**: 109.0
-- **Background Architecture**: Standard Gecko MV3 Event Page (`background.scripts: ["background.js"]`)
+- **Minimum Firefox Version**: 140.0 (Mandatory for AMO data collection consent)
+- **Data Collection Permissions**: `none` (100% offline, zero data collected)
 - **Permissions**: `activeTab`, `storage`
 - **Host Permissions**:
   - `https://www.youtube.com/*`
