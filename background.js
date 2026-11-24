@@ -1,5 +1,6 @@
 // Reels Master for Firefox (Gecko) - Background Event Script
 // Created by: Pramod Beema (https://github.com/pramodbeema/ReelsMasterGecko)
+// Note: Purpose-built for Desktop Firefox with physical keyboard and mouse controls. Not designed for mobile/Android.
 
 // Open welcome onboarding page on install or update
 chrome.runtime.onInstalled.addListener((details) => {

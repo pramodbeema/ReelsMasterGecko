@@ -1,9 +1,12 @@
 # Reviewer Instructions for Reels Master (v2.1.0) - Mozilla Add-ons (AMO)
 
-## How to Test in Firefox
-1. Open Firefox and go to `about:debugging#/runtime/this-firefox`.
+## Target Platform & Compatibility
+- **Desktop Only (Windows, macOS, Linux)**: Reels Master is specifically architected for desktop browsing environments relying on physical hardware keyboard shortcuts (Space/K, arrow navigation, volume modifiers) and mouse interactions (timeline scrubber on hover and drag). It is intentionally **not designed for or targeting mobile devices / Firefox for Android**, where touch gestures replace keyboard shortcuts.
+
+## How to Test in Firefox (Desktop)
+1. Open Firefox on your desktop and go to `about:debugging#/runtime/this-firefox`.
 2. Click **Load Temporary Add-on...** and select `manifest.json` from the root of this extension directory.
-3. Test on any or all 3 supported platforms:
+3. Test on any or all 3 supported platforms using your keyboard and mouse:
    - **YouTube Shorts**: `https://www.youtube.com/shorts/`
    - **Instagram Reels**: `https://www.instagram.com/reels/`
    - **Facebook Reels**: `https://www.facebook.com/reel/`

@@ -2,6 +2,8 @@
 
 Take full control of YouTube Shorts, Instagram Reels, and Facebook Reels on Firefox with essential desktop superpowers!
 
+> 🖥️ **Desktop Exclusive**: Reels Master is purpose-built exclusively for desktop browser workflows powered by physical keyboard shortcuts and precision mouse hover navigation (Windows, macOS, Linux). Because mobile environments rely on touch swipe gestures and lack hardware keyboards, this extension is intentionally designed solely for Desktop Firefox and not for mobile counterparts or Firefox for Android.
+
 Short-form videos on YouTube, Instagram, and Facebook are designed for mobile swiping, leaving desktop browser users without basic controls like spacebar play/pause, playback speed, timeline scrubbing, seeking, and hands-free watching.
 
 Reels Master brings a full suite of desktop keyboard shortcuts, customizable seeking, speed controls, hands-free auto-scrolling, an interactive Instagram timeline scrubber, and on-screen controls directly to YouTube, Instagram, and Facebook — seamlessly integrated into modern dark interfaces.
@@ -45,7 +47,7 @@ Convert Shorts or Reels to regular video player with Ctrl + Shift + F (Mac: Cmd 
 
 ---
 
-### ⌨️ Keyboard Shortcuts Reference
+### ⌨️ Keyboard Shortcuts Reference (Desktop)
 
 - Space / K: Play / Pause video (no page scroll)
 - > / < (Shift + . / ,): Playback speed (0.25x – 2.0x)
@@ -57,6 +59,12 @@ Convert Shorts or Reels to regular video player with Ctrl + Shift + F (Mac: Cmd 
 - C: Captions Toggle
 - A: Audio Track Menu (YouTube)
 - Ctrl + Shift + F: Convert to standard video format
+
+---
+
+### 💻 System Compatibility
+- **Supported**: Mozilla Firefox on Desktop (Windows, macOS, Linux).
+- **Not Supported**: Firefox for Android / Mobile devices (requires hardware keyboard & mouse hover).
 
 ---
 

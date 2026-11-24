@@ -1,5 +1,6 @@
 // Reels Master for Firefox (Gecko) - Unified Content Script (YouTube Shorts, Instagram Reels, Facebook Reels)
 // Created by: Pramod Beema (https://github.com/pramodbeema/ReelsMasterGecko)
+// Note: Purpose-built for Desktop Firefox with physical keyboard & mouse controls. Not designed for mobile/Android.
 
 if (window.location.hostname.includes('youtube.com')) {
     // ======================================================================

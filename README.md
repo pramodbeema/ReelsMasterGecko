@@ -7,6 +7,8 @@
 
 > **Desktop superpowers for YouTube Shorts, Instagram Reels & Facebook Reels on Mozilla Firefox.**
 
+> 🖥️ **Desktop Exclusive**: Reels Master is specifically tailored for desktop browser environments (Windows, macOS, Linux) utilizing physical keyboard shortcuts and mouse hover navigation. Because mobile touchscreens lack physical hardware keyboards and rely on swipe gestures, this extension is intentionally designed solely for Desktop Firefox and not for mobile devices or Firefox for Android.
+
 Control video playback across YouTube Shorts, Instagram Reels, and Facebook Reels with essential desktop superpowers: spacebar play/pause without page scroll, hands-free auto-scrolling, an interactive Instagram timeline scrubber, playback speed controls, customizable seeking, volume controls, captions, and one-click standard video conversion.
 
 Created by **[Pramod Beema](https://github.com/pramodbeema)**
